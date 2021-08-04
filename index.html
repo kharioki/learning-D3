@@ -2,7 +2,13 @@
   <head>
     <title>Learning D3.js</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      .big {
+        font-size: 24px;
+      }
+    </style>
   </head>
+
   <body>
     <ul class="items">
       <li>Item 1</li>
@@ -10,10 +16,31 @@
       <li>Item 3</li>
       <li>Item 4</li>
       <li>Item 5</li>
+      <li>Item 6</li>
+      <li>Item 7</li>
+      <li>Item 8</li>
+      <li>Item 9</li>
+      <li>Item 10</li>
     </ul>
 
     <script>
-      d3.selectAll("li").style("color", "red");
+      // selects all list items
+      // d3.selectAll("li").style("color", "red");
+
+      // select first item on list
+      d3.select("li").style("color", "blue");
+
+      // select nth item on list
+      d3.select("li:nth-child(3n)").style("color", "green");
+
+      // select all the even/odd items on list
+      d3.selectAll("li:nth-child(even)").style("color", "red");
+
+      // change content of even items on list
+      d3.selectAll("li:nth-child(even)")
+      .style("color", "orange")
+      .html("<b>Even items</b>")
+      .classed("big", true);
     </script>
   </body>
 </html>
