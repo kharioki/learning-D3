@@ -5,15 +5,19 @@
   </head>
   <body>
     <ul class="items">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-      <li>Item 4</li>
-      <li>Item 5</li>
+      <li>Item</li>
+      <li>Item</li>
+      <li>Item</li>
+      <li>Item</li>
+      <li>Item</li>
     </ul>
 
     <script>
-      d3.selectAll("li").style("color", "red");
+      var numArray = [12, 34, 56, 63, 78];
+
+      d3.selectAll(".items li")
+        .data(numArray)
+        .text(function(d) { return 'Item number ' + d; });
     </script>
   </body>
 </html>
