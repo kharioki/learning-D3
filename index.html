@@ -4,16 +4,25 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
   </head>
   <body>
-    <ul class="items">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-      <li>Item 4</li>
-      <li>Item 5</li>
-    </ul>
+    <h1>SVG Shapes</h1>
+    <svg width="400" height="400" style="background: #f4f4f4;">
+      <rect 
+        width="300" 
+        height="300" 
+        fill="rgb(255, 0, 0)" 
+        stroke="#000" 
+        stroke-width="1"
+        x="50"
+        y="50"
+      />
+    </svg>
+
+    <svg width="400" height="400" style="background: #f4f4f4;">
+      <circle cx="50" cy="50" r="40" fill="yellow" stroke="#000" stroke-width="1" />
+    </svg>
 
     <script>
-      d3.selectAll("li").style("color", "red");
+      
     </script>
   </body>
 </html>
