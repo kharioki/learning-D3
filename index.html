@@ -1,19 +1,59 @@
 <html>
   <head>
     <title>Learning D3.js</title>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
   </head>
   <body>
+    <h1>Top Smartphones</h1>
     <ul class="items">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-      <li>Item 4</li>
-      <li>Item 5</li>
+      <li>iPhone 12</li>
+      <li>Galaxy S20</li>
+      <li>Oneplus 9</li>
+      <li>Xiaomi note 10</li>
+      <li>Oppo P3</li>
     </ul>
 
     <script>
-      d3.selectAll("li").style("color", "red");
+      var listStyles = [
+        {
+          'background': 'red',
+          'color': 'white',
+          'width': '15'
+        },
+        {
+          'background': 'green',
+          'color': 'white',
+          'width': '35'
+        },
+        {
+          'background': 'pink',
+          'color': 'white',
+          'width': '10'
+        },
+        {
+          'background': 'blue',
+          'color': 'white',
+          'width': '25'
+        },
+        {
+          'background': 'orange',
+          'color': 'white',
+          'width': '15'
+        },
+      ];
+
+      d3.selectAll('.items li')
+        .data(listStyles)
+        .style({
+          'font-size': '18px',
+          'padding': '6px',
+          'margin': '4px',
+          'list-style': 'none',
+          'background': function(d) { return d.background; },
+          'color': function(d) { return d.color; },
+          'width': function(d) { return d.width+'%'; }
+        });
+
     </script>
   </body>
 </html>
