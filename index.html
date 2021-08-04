@@ -13,19 +13,35 @@
     </ul>
 
     <script>
-      var numArray = [12, 20, 30, 36, 40];
+      var numArray = [12, 20, 30, 36, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130];
 
+      // select and append number to text
       // d3.selectAll(".items li")
       //   .data(numArray)
       //   .text(function(d) { 
       //     return 'Item number ' + d; 
       //   });
 
-      d3.selectAll(".items li")
+      // d3.selectAll(".items li")
+      //   .data(numArray)
+      //   .style("font-size", function(d) {
+      //     return d + "px";
+      //   });
+
+      // using enter and exit methods
+      var li = d3.select('body')
+        .selectAll(".items li")
         .data(numArray)
-        .style("font-size", function(d) {
-          return d + "px";
+        .text(function(d) { 
+          return 'Item number ' + d; 
         });
+
+      li.enter().append("li")
+        .text(function(d) {
+          return 'Item number ' + d;
+        });
+
+      li.exit().remove();
     </script>
   </body>
 </html>
