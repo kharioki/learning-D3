@@ -13,11 +13,19 @@
     </ul>
 
     <script>
-      var numArray = [12, 34, 56, 63, 78];
+      var numArray = [12, 20, 30, 36, 40];
+
+      // d3.selectAll(".items li")
+      //   .data(numArray)
+      //   .text(function(d) { 
+      //     return 'Item number ' + d; 
+      //   });
 
       d3.selectAll(".items li")
         .data(numArray)
-        .text(function(d) { return 'Item number ' + d; });
+        .style("font-size", function(d) {
+          return d + "px";
+        });
     </script>
   </body>
 </html>
