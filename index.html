@@ -4,16 +4,30 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
   </head>
   <body>
-    <ul class="items">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-      <li>Item 4</li>
-      <li>Item 5</li>
-    </ul>
+    <div id="chart"></div>
 
     <script>
-      d3.selectAll("li").style("color", "red");
+      var myData = [100, 125, 320, 440, 500, 75, 125, 300, 90, 450, 250, 180];
+
+      var height = 500;
+      var width = 500;
+      var barWidth = 35;
+      var barOffset = 5;
+
+      var myChart = d3.select("#chart")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .style('background', '#f4f4f4')
+        .selectAll("rect")
+        .data(myData)
+        .enter()
+          .append("rect")
+          .style("fill", "lightgreen")
+          .attr("width", barWidth)
+          .attr("height", function(d) { return d; })
+          .attr("x", function(d, i) { return i * (barWidth + barOffset); })
+          .attr("y", function(d) { return height - d; });
     </script>
   </body>
 </html>
