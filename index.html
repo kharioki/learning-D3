@@ -7,7 +7,19 @@
     <div id="chart"></div>
 
     <script>
-      var myData = [100, 125, 320, 440, 500, 750, 125, 300, 90, 450, 250, 180, 230, 600];
+      // var myData = [100, 125, 320, 440, 500, 750, 125, 300, 90, 450, 250, 180, 230, 600];
+
+      var myData = [];
+      var dataCount = 50;
+
+      for(var i = 0; i < dataCount; i++) {
+        myData.push(Math.round(Math.random() * 500))
+      }
+
+      // sort myData
+      myData.sort(function(a, b) {
+        return a - b;
+      })
 
       var margin = {
 			top: 30,
@@ -113,7 +125,7 @@
       var hAxis = d3.svg.axis()
         .scale(hScale)
         .orient("bottom")
-        .tickValues(hScale.domain().filter(function(d, i) { return !(i % (myData.length/7)); }))
+        .tickValues(hScale.domain().filter(function(d, i) { return !(i % (myData.length/10)); }))
 
       // H Guide
       var hGuide = d3.select('svg')
